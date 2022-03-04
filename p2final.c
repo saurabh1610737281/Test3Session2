@@ -36,6 +36,6 @@ int main()
   f2=input_fraction();
   f3=input_fraction();
   smallest = find_smallest(f1,f2,f3);
-  output(f1,f2,f3,smallest);
-  return 0:
+  output(f1, f2, f3, smallest);
+  return 0;
 }
