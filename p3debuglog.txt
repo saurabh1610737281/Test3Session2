@@ -1,1 +1,67 @@
+ gcc -g p3final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x775: file p3final.c, line 6.
+(gdb) r
+ pwd
+/home/runner/Test3Session2-7
+ gcc -g p3final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x775: file p3final.c, line 6.
+(gdb) r
+Starting program: /home/runner/Test3Session2-7/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p3final.c:6
+6   {
+(gdb) n
+9       printf("Enter a number n\n");
+(gdb) n
+Enter a number n
+10      scanf("%d",&n);
+(gdb) n
+n
+11   printf("Enter a number r\n");
+(gdb) n
+Enter a number r
+12      scanf("%d",&r);
+(gdb) n
+13      ncr=fact(n)/(fact(r)*fact(n-r));
+(gdb) n
+
+Program received signal SIGFPE, Arithmetic exception.
+0x000055830f800801 in main () at p3final.c:13
+13      ncr=fact(n)/(fact(r)*fact(n-r));
+(gdb) Quit
+(gdb) 
