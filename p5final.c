@@ -1,47 +1,24 @@
 #include <stdio.h>
-int input()
-{
+int main() {
   int n;
-  printf("Enter the number\n");
-  scanf("%d",&n);
-  return n;
-}
+  int f;
+  double arr[100];
+  printf("Enter the number of elements (1 to 100): ");
+  scanf("%d", &n);
 
-void init_array(int n, int a[n])
-{
-  for(int i=0;i<n;i++)
-    a[i] = i;
-  a[1]=0;
-}
-
-void ets(int n, int a[n])
-{
-  int i=0;
-   /* Find next non-zero number */
-  while(i<sqrt(n)){
-   for(;a[i]==0 ;i++);
-   for(int k=i+i;k<n;k += i)
-     a[i] = 0;
-   i++;
+  for (int i = 0; i < n; ++i) {
+    printf("Enter number%d: ", i + 1);
+    scanf("%lf", &arr[i]);
   }
-}
+  for (int i = 1; i < n; ++i) {
+    if (arr[0] < arr[i]) {
+      arr[0] = arr[i];
+      f=i;
+    }
+  }
 
+  printf("Largest element = %.2lf", arr[0]);
+  printf("The Index Is:%d",f);
 
-void display(int n, int a[n])
-{
-  for(int i=0;i<n;i++)
-    if(a[i]!=0)
-      printf("%d ",a[i]);
-  printf("\n");
-}
-
-int main()
-{
-  int n;
-  n=input();
-  int a[n];
-  init_array(n,a);
-  ets(n,a);
-  display(n,a);
   return 0;
 }

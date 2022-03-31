@@ -1,32 +1,15 @@
-/* Write a program to find the index of a substring of a string.
-void input_string(char *a);
-int str_reverse(char *string, char *substring);
-void output(char *string, char *substring, int index); */
-
-int string_length(char *s)
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
 {
-  int i;
-  for(i=0;s[i]!='\0';i++);
-  return i;
+  char str[] = "bbdbd jhsh ajj";
+  char* token;
+  char* rest = str;
+  int n=0;
+  while ((token = strtok_r(rest, " ", &rest)))
+    n=n+1;
+    return 0;
+  printf("No.=%d",n);
+  return 0;
 }
-
-int string_ncmp(char *s1,char *s2)
-{
-  for(int i=0; i<n && s1[i]==s2[i] && s1[i] != '\0';i++);
-  return s1[i] - s2[i];
-}
-
-
-int string_index(char *s, char *subs)
-{
-  int l1=string_lenght(s);
-  int l2=string_lenght(subs);
-  if l1 < l2
-      return -1;
-  for(int i=0;i<l1-l2;i++)
-    if (string_nscmp(s,subs))
-      return i;
-  return -1;
-}
-
-/* Understand and debug the functions and write main */
